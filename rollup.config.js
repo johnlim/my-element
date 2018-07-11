@@ -1,4 +1,4 @@
-import babel from 'rollup-plugin-babel';
+import babel from 'rollup-plugin-babel'
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
@@ -16,8 +16,8 @@ export default {
       browser: true,
     }),
     commonjs(),
-      babel({
-        exclude: 'node_modules/**',
-      })
-  ]
+    babel({
+      exclude: 'node_modules/**',
+    }),
+  ],
 };
