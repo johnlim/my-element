@@ -17,7 +17,11 @@ export default {
     }),
     commonjs(),
     babel({
-      exclude: 'node_modules/**',
-    }),
+      // babelrc: false is needed to prevent reading broken .babelrc files from
+      // dependencies (we have to process node_modules). Thats why we also need
+      // to inline our own .babelrc file
+      babelrc: false,
+      presets: [["@babel/es2015", { modules: false }]]
+    })
   ],
 };
