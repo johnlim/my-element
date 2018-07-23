@@ -4,7 +4,9 @@
   "description": "Building a custom lit element with rollup",
   "main": "my-element.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "rm -rf ../build",
+    "build": "npm run clean && ./node_modules/.bin/rollup -c",
+    "start": "cd .. && polymer serve"
   },
   "repository": {
     "type": "git",
@@ -16,10 +18,7 @@
     "url": "https://github.com/johnlim/my-element/issues"
   },
   "homepage": "https://github.com/johnlim/my-element#readme",
-  "dependencies": {
-    "@polymer/lit-element": "^0.5.2",
-    "auth0-lock": "^11.7.2"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.52",
     "@babel/plugin-external-helpers": "^7.0.0-beta.52",
