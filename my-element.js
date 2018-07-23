@@ -1,5 +1,7 @@
 import {LitElement, html} from '@polymer/lit-element';
-
+// import auth0 from 'auth0-js'
+import Auth0Lock from 'auth0-lock'
+// new Auth0Lock()
 class MyElement extends LitElement {
 
   // Public property API that triggers re-render (synced with attributes)
