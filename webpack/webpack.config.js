@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 module.exports = {
-  entry: '../my-element.js',
+  entry: ['babel-polyfill', '../my-element.js'],
   output: {
     path: path.resolve(__dirname, '../build/js/'),
     filename: 'my-element.min.js'
@@ -11,6 +11,19 @@ module.exports = {
     contentBase: './',
     https: true,
     port: 3000
+  },
+  module: {
+    rules: [
+      {
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
+        },
+        test: /\.js$/,
+      },
+    ]
   },
   plugins: [
     new webpack.DefinePlugin({
